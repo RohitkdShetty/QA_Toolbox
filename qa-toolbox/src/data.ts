@@ -1,0 +1,152 @@
+import { GeneratorCategory } from './types';
+
+export const CATEGORIES: GeneratorCategory[] = [
+  {
+    key: 'user-data',
+    title: 'User Data',
+    description: 'Realistic customer, company, address, and profile datasets for standard signups, records, and KYC flows.',
+    iconName: 'User',
+    items: [
+      { id: 'user-profile', name: 'user-profile', label: 'Generate User Profile', endpoint: '/api/generate/user', description: 'Basic user contact name, username, email, phone, and company.', categoryKey: 'user-data' },
+      { id: 'user-full-profile', name: 'user-full-profile', label: 'Generate Complete Profile', endpoint: '/api/generate/profile', description: 'Full user persona dataset including workspace, bank card, address, and bio.', categoryKey: 'user-data' },
+      { id: 'user-company', name: 'user-company', label: 'Generate Company', endpoint: '/api/generate/company', description: 'Company details, catchphrase, employee count, and website URL.', categoryKey: 'user-data' },
+      { id: 'user-address', name: 'user-address', label: 'Generate Address', endpoint: '/api/generate/address', description: 'Full postal address, state, city, ZIP, country, and lat/long coordinates.', categoryKey: 'user-data' },
+      { id: 'user-phone', name: 'user-phone', label: 'Generate Phone', endpoint: '/api/generate/phone', description: 'Standard randomized telephone formats and raw digit lists.', categoryKey: 'user-data' },
+      { id: 'user-email', name: 'user-email', label: 'Generate Email', endpoint: '/api/generate/email', description: 'Standard fake emails, disposable mail addresses, and corporate emails.', categoryKey: 'user-data' },
+      { id: 'user-username', name: 'user-username', label: 'Generate Username', endpoint: '/api/generate/username', description: 'Fitted usernames, simple alphanumerics, and complex handles.', categoryKey: 'user-data' },
+      { id: 'user-password', name: 'user-password', label: 'Generate Password', endpoint: '/api/generate/password', description: 'Cryptographically secure complex password combinations.', categoryKey: 'user-data' },
+      { id: 'user-country', name: 'user-country', label: 'Generate Country', endpoint: '/api/generate/country', description: 'Random country name, two-letter code, and continent.', categoryKey: 'user-data' },
+      { id: 'user-state', name: 'user-state', label: 'Generate State', endpoint: '/api/generate/state', description: 'Standard state name and corresponding official abbreviation.', categoryKey: 'user-data' },
+      { id: 'user-city', name: 'user-city', label: 'Generate City', endpoint: '/api/generate/city', description: 'Random metropolitan cities and standard prefixes.', categoryKey: 'user-data' },
+      { id: 'user-postal', name: 'user-postal', label: 'Generate Postal Code', endpoint: '/api/generate/postal', description: 'Valid structured standard ZIP / postal codes and ZIP+4 formats.', categoryKey: 'user-data' },
+      { id: 'user-job', name: 'user-job', label: 'Generate Job', endpoint: '/api/generate/job', description: 'Work titles, professional department categories, and job types.', categoryKey: 'user-data' },
+    ]
+  },
+  {
+    key: 'boundary',
+    title: 'Boundary Testing',
+    description: 'Special inputs, extreme string lengths, RTL fonts, and Unicode characters to stress-test layout, memory buffers, and database constraints.',
+    iconName: 'Minimize2',
+    items: [
+      { id: 'b-empty', name: 'b-empty', label: 'Generate Empty String', endpoint: '/api/generate/boundary/empty', description: 'Raw empty string ("") to verify field validation.', categoryKey: 'boundary' },
+      { id: 'b-null', name: 'b-null', label: 'Generate NULL', endpoint: '/api/generate/boundary/null', description: 'Raw null value to test database schema nullable constraints.', categoryKey: 'boundary' },
+      { id: 'b-space', name: 'b-space', label: 'Generate Whitespace', endpoint: '/api/generate/boundary/whitespace', description: 'A string containing 50 blank spaces to test trimming.', categoryKey: 'boundary' },
+      { id: 'b-char1', name: 'b-char1', label: 'Generate 1 Character', endpoint: '/api/generate/boundary/char1', description: 'Single character boundaries for input minimum lengths.', categoryKey: 'boundary' },
+      { id: 'b-char5', name: 'b-char5', label: 'Generate 5 Characters', endpoint: '/api/generate/boundary/char5', description: 'Short string boundary values.', categoryKey: 'boundary' },
+      { id: 'b-char10', name: 'b-char10', label: 'Generate 10 Characters', endpoint: '/api/generate/boundary/char10', description: '10-character boundary strings.', categoryKey: 'boundary' },
+      { id: 'b-char50', name: 'b-char50', label: 'Generate 50 Characters', endpoint: '/api/generate/boundary/char50', description: 'Medium text boundaries.', categoryKey: 'boundary' },
+      { id: 'b-char100', name: 'b-char100', label: 'Generate 100 Characters', endpoint: '/api/generate/boundary/char100', description: 'Standard input field length limits.', categoryKey: 'boundary' },
+      { id: 'b-char500', name: 'b-char500', label: 'Generate 500 Characters', endpoint: '/api/generate/boundary/char500', description: 'Large description text block boundary.', categoryKey: 'boundary' },
+      { id: 'b-char1000', name: 'b-char1000', label: 'Generate 1,000 Characters', endpoint: '/api/generate/boundary/char1000', description: 'Long comment or text-area input constraints.', categoryKey: 'boundary' },
+      { id: 'b-char5000', name: 'b-char5000', label: 'Generate 5,000 Characters', endpoint: '/api/generate/boundary/char5000', description: 'Extremely long payload text block.', categoryKey: 'boundary' },
+      { id: 'b-char10000', name: 'b-char10000', label: 'Generate 10,000 Characters', endpoint: '/api/generate/boundary/char10000', description: 'Massive string buffer block for database overflow testing.', categoryKey: 'boundary' },
+      { id: 'b-unicode', name: 'b-unicode', label: 'Generate Unicode', endpoint: '/api/generate/boundary/unicode', description: 'Extended high-order Latin symbols to test character encoding.', categoryKey: 'boundary' },
+      { id: 'b-emoji', name: 'b-emoji', label: 'Generate Emoji', endpoint: '/api/generate/boundary/emoji', description: 'String of common emojis to test database collation support (utf8mb4).', categoryKey: 'boundary' },
+      { id: 'b-mixed', name: 'b-mixed', label: 'Generate Mixed Unicode', endpoint: '/api/generate/boundary/mixed', description: 'Mixed symbols, Arabic letters, emojis, and standard letters.', categoryKey: 'boundary' },
+      { id: 'b-rtl', name: 'b-rtl', label: 'Generate RTL Text', endpoint: '/api/generate/boundary/rtl', description: 'Right-To-Left script text (Arabic / Hebrew) to test UI rendering.', categoryKey: 'boundary' },
+      { id: 'b-longurl', name: 'b-longurl', label: 'Generate Long URL', endpoint: '/api/generate/boundary/url', description: 'A massive URL format (400+ characters) to test query string parser safety.', categoryKey: 'boundary' },
+      { id: 'b-longfile', name: 'b-longfile', label: 'Generate Long Filename', endpoint: '/api/generate/boundary/filename', description: 'Extremely long filename containing many period segments.', categoryKey: 'boundary' },
+      { id: 'b-paragraph', name: 'b-paragraph', label: 'Generate Large Paragraph', endpoint: '/api/generate/boundary/paragraph', description: 'Rich lorem ipsum paragraphs to fill layout content views.', categoryKey: 'boundary' },
+    ]
+  },
+  {
+    key: 'security',
+    title: 'Security Testing',
+    description: 'Active penetration payloads for testing security validations, sanitizers, and database firewalls.',
+    iconName: 'ShieldAlert',
+    items: [
+      { id: 's-sql', name: 's-sql', label: 'Generate SQL Injection', endpoint: '/api/generate/security/sql', description: 'Common SQL injection payloads (1=1, Union Selects, table drops) to test sanitization.', categoryKey: 'security' },
+      { id: 's-xss', name: 's-xss', label: 'Generate XSS Payload', endpoint: '/api/generate/security/xss', description: 'Active cross-site scripting script, onload, and iframe tags.', categoryKey: 'security' },
+      { id: 's-ldap', name: 's-ldap', label: 'Generate LDAP Injection', endpoint: '/api/generate/security/ldap', description: 'Vulnerability test queries for LDAP and Active Directory directories.', categoryKey: 'security' },
+      { id: 's-xpath', name: 's-xpath', label: 'Generate XPath Injection', endpoint: '/api/generate/security/xpath', description: 'XPath evaluation injection strings for XML documents.', categoryKey: 'security' },
+      { id: 's-cmd', name: 's-cmd', label: 'Generate Command Injection', endpoint: '/api/generate/security/command', description: 'OS command injections (shell commands, rm, start, cat) to test execution safety.', categoryKey: 'security' },
+      { id: 's-xml', name: 's-xml', label: 'Generate XML Injection (XXE)', endpoint: '/api/generate/security/xml', description: 'XML external entity injection examples to test XML parsers.', categoryKey: 'security' },
+      { id: 's-csv', name: 's-csv', label: 'Generate CSV Injection', endpoint: '/api/generate/security/csv', description: 'Spreadsheet formula exploits (=SUM, =cmd, +) to check spreadsheet macro safety.', categoryKey: 'security' },
+      { id: 's-crlf', name: 's-crlf', label: 'Generate CRLF Injection', endpoint: '/api/generate/security/crlf', description: 'HTTP carriage return line feeds (\\r\\n) to test header splittings.', categoryKey: 'security' },
+      { id: 's-ssrf', name: 's-ssrf', label: 'Generate SSRF Payload', endpoint: '/api/generate/security/ssrf', description: 'Internal IP lookups (localhost, AWS meta-data IP) to test server requests.', categoryKey: 'security' },
+      { id: 's-traversal', name: 's-traversal', label: 'Generate Directory Traversal', endpoint: '/api/generate/security/traversal', description: 'Relative folder bypass pathways (../../etc/passwd) to test local directory safety.', categoryKey: 'security' },
+      { id: 's-redirect', name: 's-redirect', label: 'Generate Open Redirect', endpoint: '/api/generate/security/redirect', description: 'External referral URLs to test URL verification filters.', categoryKey: 'security' },
+    ]
+  },
+  {
+    key: 'api-payloads',
+    title: 'API Payloads',
+    description: 'Formally correct formatted data structures to mock API requests and mock endpoints.',
+    iconName: 'Braces',
+    items: [
+      { id: 'a-json', name: 'a-json', label: 'Generate JSON', endpoint: '/api/generate/api/json', description: 'A standard API response containing a nested JSON user config object.', categoryKey: 'api-payloads' },
+      { id: 'a-nested-json', name: 'a-nested-json', label: 'Generate Nested JSON', endpoint: '/api/generate/api/nested_json', description: 'Highly nested structure to verify JSON deserializers and depth handlers.', categoryKey: 'api-payloads' },
+      { id: 'a-huge-json', name: 'a-huge-json', label: 'Generate Huge JSON', endpoint: '/api/generate/api/huge_json', description: 'Large array payload (200 complete user records) to test loading speeds and page load performance.', categoryKey: 'api-payloads' },
+      { id: 'a-invalid-json', name: 'a-invalid-json', label: 'Generate Invalid JSON', endpoint: '/api/generate/api/invalid_json', description: 'Intentionally malformed JSON syntax (missing commas, bad quotes) to test exception catches.', categoryKey: 'api-payloads' },
+      { id: 'a-xml', name: 'a-xml', label: 'Generate XML', endpoint: '/api/generate/api/xml', description: 'Standard schema-conforming structural XML tags.', categoryKey: 'api-payloads' },
+      { id: 'a-invalid-xml', name: 'a-invalid-xml', label: 'Generate Invalid XML', endpoint: '/api/generate/api/invalid_xml', description: 'Intentionally broken XML tag structures.', categoryKey: 'api-payloads' },
+      { id: 'a-yaml', name: 'a-yaml', label: 'Generate YAML', endpoint: '/api/generate/api/yaml', description: 'A structured YAML format representing server configurations.', categoryKey: 'api-payloads' },
+      { id: 'a-csv', name: 'a-csv', label: 'Generate CSV', endpoint: '/api/generate/api/csv', description: 'A comma-separated-value file string with complete header names and row items.', categoryKey: 'api-payloads' },
+      { id: 'a-multipart', name: 'a-multipart', label: 'Generate Multipart Data', endpoint: '/api/generate/api/multipart', description: 'Simulation of multi-part form-data with boundaries and file content.', categoryKey: 'api-payloads' },
+    ]
+  },
+  {
+    key: 'payment',
+    title: 'Payment Data',
+    description: 'Realistic mock financial accounts, cards, UPI IDs, and IBANs. (These card numbers match the Luhn check algorithm for testing validation filters).',
+    iconName: 'CreditCard',
+    items: [
+      { id: 'p-visa', name: 'p-visa', label: 'Generate Valid Visa', endpoint: '/api/generate/payment/visa', description: 'Mock Visa card details conforming to correct length and the Luhn validation.', categoryKey: 'payment' },
+      { id: 'p-master', name: 'p-master', label: 'Generate MasterCard', endpoint: '/api/generate/payment/mastercard', description: 'Mock MasterCard details conforming to Luhn algorithm.', categoryKey: 'payment' },
+      { id: 'p-amex', name: 'p-amex', label: 'Generate Amex', endpoint: '/api/generate/payment/amex', description: 'Mock American Express details (15 digits) conforming to Luhn check.', categoryKey: 'payment' },
+      { id: 'p-cvv', name: 'p-cvv', label: 'Generate CVV', endpoint: '/api/generate/payment/cvv', description: 'Random 3-digit CVV and 4-digit Amex CVV codes.', categoryKey: 'payment' },
+      { id: 'p-expiry', name: 'p-expiry', label: 'Generate Expiry Date', endpoint: '/api/generate/payment/expiry', description: 'Standard formatted card expiration date (MM/YY) in the future.', categoryKey: 'payment' },
+      { id: 'p-iban', name: 'p-iban', label: 'Generate IBAN', endpoint: '/api/generate/payment/iban', description: 'Mock International Bank Account Number and corresponding SWIFT/BIC.', categoryKey: 'payment' },
+      { id: 'p-upi', name: 'p-upi', label: 'Generate UPI ID', endpoint: '/api/generate/payment/upi', description: 'Unified Payments Interface ID formats (e.g., testuser@okaxis).', categoryKey: 'payment' },
+    ]
+  },
+  {
+    key: 'network',
+    title: 'Network',
+    description: 'Network-related mock identifiers such as IP addresses, URLs, MAC addresses, and common server ports.',
+    iconName: 'Globe',
+    items: [
+      { id: 'n-ipv4', name: 'n-ipv4', label: 'Generate IPv4', endpoint: '/api/generate/network/ipv4', description: 'Random standard IPv4 address.', categoryKey: 'network' },
+      { id: 'n-ipv6', name: 'n-ipv6', label: 'Generate IPv6', endpoint: '/api/generate/network/ipv6', description: 'Random standard hexadecimal IPv6 address.', categoryKey: 'network' },
+      { id: 'n-mac', name: 'n-mac', label: 'Generate MAC Address', endpoint: '/api/generate/network/mac', description: 'Standard colons-separated physical network MAC address.', categoryKey: 'network' },
+      { id: 'n-domain', name: 'n-domain', label: 'Generate Domain', endpoint: '/api/generate/network/domain', description: 'Randomly generated hostname or web domain name.', categoryKey: 'network' },
+      { id: 'n-url', name: 'n-url', label: 'Generate URL', endpoint: '/api/generate/network/url', description: 'Standard secure website URL (https://...).', categoryKey: 'network' },
+      { id: 'n-email', name: 'n-email', label: 'Generate Email', endpoint: '/api/generate/network/email', description: 'Standard email address generator.', categoryKey: 'network' },
+      { id: 'n-port', name: 'n-port', label: 'Generate Port', endpoint: '/api/generate/network/port', description: 'Standard development and web service port numbers (80, 443, 3306, 5432, etc.).', categoryKey: 'network' },
+    ]
+  },
+  {
+    key: 'datetime',
+    title: 'Date & Time',
+    description: 'Multi-format dates, unix epochs, past/future dates, and leaps to verify schedule rules, timelines, and logic bounds.',
+    iconName: 'Calendar',
+    items: [
+      { id: 'd-curr', name: 'd-curr', label: 'Generate Current Date', endpoint: '/api/generate/datetime/current', description: 'Today\'s instant ISO and regional dates.', categoryKey: 'datetime' },
+      { id: 'd-rand', name: 'd-rand', label: 'Random Date', endpoint: '/api/generate/datetime/random', description: 'Completely random calendar date.', categoryKey: 'datetime' },
+      { id: 'd-past', name: 'd-past', label: 'Past Date', endpoint: '/api/generate/datetime/past', description: 'Standard randomized past calendar date.', categoryKey: 'datetime' },
+      { id: 'd-future', name: 'd-future', label: 'Future Date', endpoint: '/api/generate/datetime/future', description: 'Standard randomized future calendar date.', categoryKey: 'datetime' },
+      { id: 'd-leap', name: 'd-leap', label: 'Leap Year Date', endpoint: '/api/generate/datetime/leap', description: 'Ensures leap years are tested (specifically February 29th dates).', categoryKey: 'datetime' },
+      { id: 'd-stamp', name: 'd-stamp', label: 'Timestamp', endpoint: '/api/generate/datetime/timestamp', description: 'Full date and time string representation.', categoryKey: 'datetime' },
+      { id: 'd-unix', name: 'd-unix', label: 'Unix Timestamp', endpoint: '/api/generate/datetime/unix', description: 'Integer epoch representation of the current date and time.', categoryKey: 'datetime' },
+      { id: 'd-zone', name: 'd-zone', label: 'Timezone', endpoint: '/api/generate/datetime/timezone', description: 'Random global geographic timezone identifier (IANA format).', categoryKey: 'datetime' },
+    ]
+  },
+  {
+    key: 'dev-utils',
+    title: 'Developer Utilities',
+    description: 'System identifiers, hashing algorithms, encoding formats, JWT tokens, and cryptographic keys.',
+    iconName: 'Wrench',
+    items: [
+      { id: 'dv-uuid', name: 'dv-uuid', label: 'Generate UUID', endpoint: '/api/generate/dev/uuid', description: 'Standard cryptographically random UUID v4 string.', categoryKey: 'dev-utils' },
+      { id: 'dv-jwt', name: 'dv-jwt', label: 'Generate JWT', endpoint: '/api/generate/dev/jwt', description: 'Simulated signed JSON Web Token with mock user claims.', categoryKey: 'dev-utils' },
+      { id: 'dv-apikey', name: 'dv-apikey', label: 'Generate API Key', endpoint: '/api/generate/dev/api_key', description: 'Standard API bearer token string with key prefixes.', categoryKey: 'dev-utils' },
+      { id: 'dv-bearer', name: 'dv-bearer', label: 'Generate Bearer Token', endpoint: '/api/generate/dev/bearer', description: 'Authorization request header Bearer token code.', categoryKey: 'dev-utils' },
+      { id: 'dv-password', name: 'dv-password', label: 'Generate Random Password', endpoint: '/api/generate/dev/password', description: 'Randomized alphanumeric and special symbol password generation.', categoryKey: 'dev-utils' },
+      { id: 'dv-hex', name: 'dv-hex', label: 'Generate Hex Color', endpoint: '/api/generate/dev/hex', description: 'Randomized hex color code (e.g. #FF5733).', categoryKey: 'dev-utils' },
+      { id: 'dv-rgb', name: 'dv-rgb', label: 'Generate RGB Color', endpoint: '/api/generate/dev/rgb', description: 'Standard color values in rgb(r, g, b) form.', categoryKey: 'dev-utils' },
+      { id: 'dv-base64', name: 'dv-base64', label: 'Generate Base64', endpoint: '/api/generate/dev/base64', description: 'Standard Base64 string encoder representation of text.', categoryKey: 'dev-utils' },
+      { id: 'dv-sha256', name: 'dv-sha256', label: 'Generate SHA256', endpoint: '/api/generate/dev/sha256', description: 'Secure hashing algorithm 256-bit encryption format.', categoryKey: 'dev-utils' },
+      { id: 'dv-md5', name: 'dv-md5', label: 'Generate MD5', endpoint: '/api/generate/dev/md5', description: 'Message digest hashing 128-bit checksum value.', categoryKey: 'dev-utils' },
+    ]
+  }
+];
